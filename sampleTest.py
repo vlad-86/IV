@@ -1,12 +1,12 @@
 import sqlite3
-import Syb
+#import Syb
 
 con = sqlite3.connect("d:\Share\FEATURES\IV\databasefile.db")
 print('Opened connection successfully')
 
 cursor = con.execute("DELETE FROM VPM_DEPARTMENT")
 cursor = con.commit()
-cursor = con.execute("INSERT INTO VPM_DEPARTMENT ('@ID', NAME, DESCRIPTION) VALUES (222, 'pycharm_successful', 'descr_filled')")
+cursor = con.execute("INSERT INTO VPM_DEPARTMENT ('@ID', NAME, DESCRIPTION) VALUES (222, 'batch_call2', 'tryIT')")
 cursor = con.commit()
 cursor = con.execute("SELECT * FROM VPM_DEPARTMENT")
 
