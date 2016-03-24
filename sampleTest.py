@@ -19,3 +19,4 @@ for row in cursor:
 con.close()
 print("Connection is closed")
 # modified on home PC
+# built in GIT commit in PyCharm
