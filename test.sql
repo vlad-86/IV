@@ -1,0 +1,1 @@
+UPDATE VPSecuritySettingsWWW SET LdapAuthentication='Y'; commit;
