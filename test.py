@@ -1,9 +1,19 @@
 import os
+<<<<<<< HEAD
 import shutil
 import sys
+=======
+from subprocess import call
+from Migration import Migration
+import sys
+import shutil
+>>>>>>> origin/master
 
 
+vpcommon = "c:\VPProducts\ViewPoint\VPCommon"
+sqllan16_path = os.environ['SQLANY16']
 
+<<<<<<< HEAD
 sourceFile = "d:\Git\IV\IV"
 destinationFile = "d:\GIT"
 
@@ -21,3 +31,16 @@ file.close()
 
 shutil.move('testtxt.txt', 'd:\git')
 os.startfile(os.path.join(destinationFile, r'testtxt.txt'))
+=======
+Migration.init_sybase_db()
+test_dir = os.path.join(vpcommon, "T1844")
+# os.chdir(%SQLANY16%)
+# print("current directory is " + str(os.getcwd()))
+# return_code = call("test.bat")
+
+# print("execution finished - " + str(return_code))
+
+
+# print("system path is - "+sqllan16_path)
+# print("test file")
+>>>>>>> origin/master
