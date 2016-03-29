@@ -11,10 +11,10 @@ import shutil
 vpcommon = "c:\VPProducts\ViewPoint\VPCommon"
 sqllan16_path = os.environ['SQLANY16']
 
-sourceFile = "d:\Git\IV\IV"
+sourceFile = r"d:\Git\IV\IV"
 destinationFile = "d:\GIT"
 
-os.chdir(sourceFile)
+# os.chdir(sourceFile)
 
 #currentDir = os.getcwd().join('test.txt')
 
@@ -22,14 +22,14 @@ if os.path.exists(os.path.join(destinationFile, r'testtxt.txt')):
     os.remove(r'd:\GIT\testtxt.txt')
 
 
-file = open(os.path.join(sourceFile,r'testtxt.txt'), 'w')
-file.write('learning how to write and open file')
-file.close()
+# file = open(os.path.join(sourceFile,r'testtxt.txt'), 'w')
+# file.write('learning how to write and open file')
+# file.close()
 
-shutil.move('testtxt.txt', 'd:\git')
-os.startfile(os.path.join(destinationFile, r'testtxt.txt'))
+# shutil.move('testtxt.txt', 'd:\git')
+# os.startfile(os.path.join(destinationFile, r'testtxt.txt'))
 
-Migration.init_sybase_db()
+# print("result is -"+str(Migration.init_sybase_db()))
 test_dir = os.path.join(vpcommon, "T1844")
 # os.chdir(%SQLANY16%)
 # print("current directory is " + str(os.getcwd()))

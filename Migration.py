@@ -25,10 +25,10 @@ class Migration:
         port = 45163
         db_name = 'VP_1'
         os.chdir(syspath)
-        arg = "-q -d1 -nogui -c ""UID=dba;PWD=sql;ENG=VP_1;links=tcpip{PORT=45163;}"" test.sql"
-        query_result = subprocess.call("dbisql.exe {0}".format(arg))
+        sql_query = "UPDATE VPSecuritySettings SET LdapAuthentication='Y'; commit;"
+        query_result = subprocess.call(["dbisql.exe", "-q", "-d1", "-nogui", "-c", "UID=dba;PWD=sql;ENG=VP_1;links=tcpip{PORT=45163;}", sql_query])
 
-        return print(str(query_result))
+        return print("Exit code of execution is - "+str(query_result))
 
     def execute_sql_lite(self, querydb):
         # TODO: implement cursor.execute from sqlite3 module
