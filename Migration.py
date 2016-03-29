@@ -22,11 +22,10 @@ class Migration:
         # "%SYPATH%\bin64\dbisql.exe" -q -d1 -nogui -c "UID=dba;PWD=sql;ENG=%SYNAME%;links=tcpip{PORT=%SYPORT%;}"*.sql
         sybase_path = os.environ['SQLANY16']
         syspath = os.path.join(sybase_path, 'bin64')
-        port = 45163
-        db_name = 'VP_1'
+        connection_string = "UID=dba;PWD=sql;ENG=VP_1;links=tcpip{PORT=45163;}"
         os.chdir(syspath)
-        sql_query = "UPDATE VPSecuritySettings SET LdapAuthentication='Y'; commit;"
-        query_result = subprocess.call(["dbisql.exe", "-q", "-d1", "-nogui", "-c", "UID=dba;PWD=sql;ENG=VP_1;links=tcpip{PORT=45163;}", sql_query])
+        sql_query = "UPDATE VPSecuritySettings SET LdapAuthentication='N'; commit;"
+        query_result = subprocess.call(["dbisql.exe", "-q", "-d1", "-nogui", "-c", connection_string, sql_query])
 
         return print("Exit code of execution is - "+str(query_result))
 
